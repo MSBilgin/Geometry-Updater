@@ -202,8 +202,8 @@ class geometryUpdater(object):
                             if self.targetLayer.geometryType() == self.sourceLayer.geometryType():
                                 #if code can pass all conditions it means everything is fine ;) so we can start the process
                                 #getting field names
-                                targetKeyColumnName = self.targetLayer.fields().toList()[self.dlg.cmbTargetField.currentIndex()].name()
-                                sourceKeyColumnName = self.sourceLayer.fields().toList()[self.dlg.cmbSourceField.currentIndex()].name()
+                                targetKeyColumnName = self.targetLayer.dataProvider().fields().toList()[self.dlg.cmbTargetField.currentIndex()].name()
+                                sourceKeyColumnName = self.sourceLayer.dataProvider().fields().toList()[self.dlg.cmbSourceField.currentIndex()].name()
 
                                 self.parser = layer2Dict()#this thread class is used for generating feature dictionaries
                                 #gui issues
@@ -258,7 +258,7 @@ class geometryUpdater(object):
         self.dlg.btnStart.setEnabled(True)
         self.dlg.btnStop.setEnabled(False)
         self.iface.mapCanvas().setRenderFlag(True)
-        self.iface.mapCanvas().refreshAllLayers()
+        self.iface.mapCanvas().refresh()
         try:
             self.parser.terminate()
             self.committer.terminate()
@@ -317,7 +317,7 @@ class geometryUpdater(object):
         if self.allMapLayers:
             cmbAttr.clear() #clear
             targetVectorLayer = self.allMapLayers[cmbLayer.currentIndex()][1]
-            attributes = targetVectorLayer.fields().toList()
+            attributes = targetVectorLayer.dataProvider().fields().toList()
             for attribute in attributes:
                 cmbAttr.addItem(attribute.name() + ' (%s)' %(attribute.typeName()))
 
