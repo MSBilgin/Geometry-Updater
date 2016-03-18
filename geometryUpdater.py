@@ -4,10 +4,10 @@
  geometryUpdater
                                  A QGIS plugin
  Updates a vector layer's features geometry from another vector layer by using ID
-                              -------------------
-        git sha              : $Format:%H$
+                             -------------------
         copyright            : (C) 2016 by Mehmet Selim BILGIN
         email                : mselimbilgin@yahoo.com
+        web                  : http://cbsuygulama.wordpress.com/
  ***************************************************************************/
 
 /***************************************************************************
@@ -18,6 +18,7 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
+ This script initializes the plugin, making it known to QGIS.
 """
 import timeit
 from PyQt4.QtCore import QSettings, QTranslator, qVersion, QCoreApplication, QObject, SIGNAL

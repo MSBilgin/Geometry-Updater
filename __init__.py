@@ -1,14 +1,13 @@
 # -*- coding: utf-8 -*-
 """
 /***************************************************************************
- geometryUpdater
+ __init__
                                  A QGIS plugin
  Updates a vector layer's features geometry from another vector layer by using ID
                              -------------------
-        begin                : 2016-03-02
         copyright            : (C) 2016 by Mehmet Selim BILGIN
         email                : mselimbilgin@yahoo.com
-        git sha              : $Format:%H$
+        web                  : http://cbsuygulama.wordpress.com/
  ***************************************************************************/
 
 /***************************************************************************

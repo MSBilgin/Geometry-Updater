@@ -8,9 +8,9 @@
 
 [general]
 name=Geometry Updater
-qgisMinimumVersion=2.12
+qgisMinimumVersion=2.8
 description=Updates a vector layer's features geometry from another vector layer by using ID
-version=0.7
+version=0.7.1
 author=Mehmet Selim BILGIN
 email=mselimbilgin@yahoo.com
 
