@@ -53,9 +53,9 @@ class geometryUpdater(object):
             if qVersion() > '4.3.3':
                 QCoreApplication.installTranslator(self.translator)
 
-        self.wkbText = {0:"GeometryUnknown", 1:"Point", 3:"LineString", 4:"Polygon", 5:"MultiPoint", 6:"MultiLineString",
-                        7:"MultiPolygon", 8:"NoGeometry", 9:"Point25D", 10:"LineString25D", 11:"Polygon25D",
-                        12:"MultiPoint25D", 13:"MultiLineString25D", 14:"MultiPolygon25D", 100:"NoGeometry"}
+        self.wkbText = {0:"GeometryUnknown", 1:"Point", 2:"LineString", 3:"Polygon", 4:"MultiPoint", 5:"MultiLineString",
+                        6:"MultiPolygon", 7:"NoGeometry", 8:"Point25D", 9:"LineString25D", 10:"Polygon25D",
+                        11:"MultiPoint25D", 12:"MultiLineString25D", 13:"MultiPolygon25D", 100:"NoGeometry"}
 
         # Declare instance attributes
         self.actions = []
