@@ -318,7 +318,7 @@ class geometryUpdater(object):
             cmbAttr.clear() #clear
             targetVectorLayer = self.allMapLayers[cmbLayer.currentIndex()][1]
             attributes = targetVectorLayer.dataProvider().fields().toList()
-            for attribute in attributes:
+            for attribute in sorted(attributes,key=lambda item:item.name() ):
                 cmbAttr.addItem(attribute.name() + ' (%s)' %(attribute.typeName()))
 
     def run(self):
@@ -328,7 +328,7 @@ class geometryUpdater(object):
         self.resultDlg.setFixedSize(self.resultDlg.size())
         self.allVectorLayers = []
 
-        self.allMapLayers = QgsMapLayerRegistry.instance().mapLayers().items() #this dict holds all map layer
+        self.allMapLayers = sorted(QgsMapLayerRegistry.instance().mapLayers().items(), key=lambda item: item[1].name())   #this dict holds all map layer
         for (notImportantForNow, layerObj) in self.allMapLayers:
             if layerObj.type() == 0:
                 self.allVectorLayers.append(layerObj)
